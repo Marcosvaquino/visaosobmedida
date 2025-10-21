@@ -143,3 +143,20 @@ body{
   font-weight: 600;
   font-size: 1rem;
 }
+
+/* Menu fixo no topo */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(20, 25, 35, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Compensa o espaço do header fixo */
+body {
+  padding-top: 90px;
+}
