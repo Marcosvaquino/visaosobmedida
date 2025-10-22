@@ -396,3 +396,27 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 120, 255, 0.4);
 }
+
+/* === Correção de alinhamento entre seções === */
+#solucoes {
+  padding-bottom: 120px; /* 🔹 aumenta a base da seção para encaixar os cards abaixo */
+}
+
+/* Seção de contato — reposiciona e centraliza dentro da área */
+#contato {
+  padding-top: 40px;     /* 🔹 aproxima o "Fale Conosco" da seção de cima */
+  padding-bottom: 80px;  /* 🔹 garante que o rodapé não "empurre" os cards pra fora */
+}
+
+#contato .two-col {
+  align-items: flex-start;   /* 🔹 evita que o card da esquerda se estique pra fora */
+  gap: 28px;
+}
+
+/* Mantém proporção visual dos cards dentro do container */
+#contato .col {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
