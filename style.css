@@ -345,28 +345,51 @@ body {
   }
 }
 
-/* WhatsApp Card Fix */
+/* WhatsApp Card Fix — centralizado dentro do vidro */
 .contact-whatsapp {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   text-align: center;
   padding: 2rem;
-  min-height: 250px;
+  min-height: 300px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  border-radius: 20px;
+  box-sizing: border-box;
 }
 
 .contact-whatsapp img {
   display: block;
-  margin: 0 auto 1rem;
+  width: 70px;
+  height: auto;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.contact-whatsapp h3 {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.contact-whatsapp p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 340px;
+  line-height: 1.4;
 }
 
 .contact-whatsapp .btn {
   margin-top: 1rem;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1.6rem;
   font-weight: 600;
   font-size: 1rem;
+  border-radius: 12px;
+  transition: all .2s ease;
 }
 
 .contact-whatsapp .btn:hover {
