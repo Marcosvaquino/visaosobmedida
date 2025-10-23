@@ -316,3 +316,61 @@ body {
     align-items: flex-start;
   }
 }
+
+/* ===== AJUSTES VISUAIS 2025-10 ===== */
+
+/* 1️⃣  Remove ícone de menu em desktop */
+.nav-toggle {
+  display: none;
+}
+@media (max-width: 760px) {
+  .nav-toggle {
+    display: block;
+  }
+}
+
+/* 2️⃣  Realce dos botões na área hero */
+.hero .btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+}
+.hero .btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+
+/* 3️⃣  Cards da seção “Sobre” mais espaçosos e horizontais */
+#sobre .two-col {
+  gap: 40px; /* mais espaço entre os dois blocos */
+}
+
+#sobre .col {
+  padding: 32px;
+}
+
+#sobre .card {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Corrige o texto do “Nosso Diferencial” para não quebrar */
+#sobre .card ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#sobre .card ol li {
+  line-height: 1.5;
+  white-space: normal;
+}
+
+/* 4️⃣  Melhora o espaçamento inferior geral da seção */
+#sobre {
+  padding-bottom: 100px;
+}
