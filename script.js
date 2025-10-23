@@ -1,38 +1,42 @@
-// ano automático no rodapé
+// === Atualiza o ano automaticamente no rodapé ===
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// menu mobile
-const btn = document.getElementById('btnMenu');
+// === Menu Mobile ===
+const btnMenu = document.getElementById('btnMenu');
 const nav = document.getElementById('nav');
-btn?.addEventListener('click', () => {
-  const open = nav.style.display === 'flex';
-  nav.style.display = open ? 'none' : 'flex';
-});
 
-// scroll suave para âncoras
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click', e=>{
-    const id = a.getAttribute('href');
-    if(!id || id==='#') return;
-    const el = document.querySelector(id);
-    if(el){
+if (btnMenu && nav) {
+  btnMenu.addEventListener('click', () => {
+    const isOpen = nav.style.display === 'flex';
+    nav.style.display = isOpen ? 'none' : 'flex';
+  });
+}
+
+// === Scroll suave para âncoras ===
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const targetId = link.getAttribute('href');
+    if (!targetId || targetId === '#') return;
+
+    const targetEl = document.querySelector(targetId);
+    if (targetEl) {
       e.preventDefault();
-      el.scrollIntoView({behavior:'smooth', block:'start'});
-      if (window.innerWidth < 760) nav.style.display='none';
+      targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // fecha o menu ao clicar em mobile
+      if (window.innerWidth < 760) {
+        nav.style.display = 'none';
+      }
     }
   });
 });
 
-// "envio" simples do formulário (substitua por backend/Formspree quando quiser)
-document.getElementById('formContato')?.addEventListener('submit', e=>{
-  e.preventDefault();
-  const data = new FormData(e.target);
-  const nome = data.get('nome');
-  const email = data.get('email');
-  const mensagem = data.get('mensagem');
-  const body = encodeURIComponent(
-    `Olá, sou ${nome} (${email}).\n\n${mensagem}\n\nEnviado via site Visão Sob Medida.`
-  );
-  // abre e-mail padrão do usuário
-  window.location.href = `mailto:contato@visaosobmedida.com.br?subject=Contato%20via%20site&body=${body}`;
+// === Ajuste visual opcional no scroll ===
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.site-header');
+  if (window.scrollY > 20) {
+    header.style.boxShadow = '0 2px 12px rgba(0,0,0,0.3)';
+  } else {
+    header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+  }
 });
