@@ -392,27 +392,50 @@ body {
   box-shadow: 0 6px 18px rgba(0, 120, 255, 0.4);
 }
 
-/* === Correção de alinhamento entre seções === */
+/* === Correção real de layout 100% zoom === */
 #solucoes {
   padding-bottom: 120px;
 }
 
+/* Mantém espaçamento equilibrado */
 #contato {
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 60px;
+  padding-bottom: 100px;
 }
 
+/* 🔹 O truque está aqui */
 #contato .two-col {
-  align-items: flex-start;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
 }
 
-#contato .col {
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* 🔹 Cada coluna respeita o container */
+#contato .col,
+#contato .card {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  box-sizing: border-box;
 }
+
+/* 🔹 Força o card do WhatsApp a caber sempre dentro */
+.contact-whatsapp {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 20px;
+  background: var(--glass);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
