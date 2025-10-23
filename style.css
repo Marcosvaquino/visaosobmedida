@@ -403,16 +403,25 @@ body {
   padding-bottom: 100px;
 }
 
-/* 🔹 O truque está aqui */
+/* 🔹 GRID SEM VAZAMENTO (corrige zoom 100%) */
 #contato .two-col {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 32px;
+  align-items: start;
+  justify-items: stretch;
   width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
+  margin: 0;
+  box-sizing: border-box;
 }
+
+#contato .col {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 
 /* 🔹 Cada coluna respeita o container */
 #contato .col,
