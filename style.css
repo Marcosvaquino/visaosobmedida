@@ -41,7 +41,7 @@ body {
 
 /* header */
 .site-header {
-  position: relative; /* 🔹 deixa o menu rolar junto */
+  position: relative;
   width: 100%;
   z-index: 100;
   background: rgba(20, 25, 35, 0.95);
@@ -168,6 +168,7 @@ body {
   display: grid;
   grid-template-columns: 1.1fr .9fr;
   gap: 28px;
+  align-items: start;
 }
 
 .cards {
@@ -345,7 +346,7 @@ body {
   }
 }
 
-/* WhatsApp Card Fix — centralizado dentro do vidro */
+/* === WhatsApp Card - alinhamento e largura 100% === */
 .contact-whatsapp {
   display: flex;
   flex-direction: column;
@@ -355,19 +356,13 @@ body {
   text-align: center;
   padding: 2rem;
   min-height: 300px;
+  width: 100%;
+  max-width: 620px;
   background: var(--glass);
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
   border-radius: 20px;
   box-sizing: border-box;
-}
-
-.contact-whatsapp img {
-  display: block;
-  width: 70px;
-  height: auto;
-  margin-bottom: 10px;
-  opacity: 0.9;
 }
 
 .contact-whatsapp h3 {
@@ -399,24 +394,25 @@ body {
 
 /* === Correção de alinhamento entre seções === */
 #solucoes {
-  padding-bottom: 120px; /* 🔹 aumenta a base da seção para encaixar os cards abaixo */
+  padding-bottom: 120px;
 }
 
-/* Seção de contato — reposiciona e centraliza dentro da área */
 #contato {
-  padding-top: 40px;     /* 🔹 aproxima o "Fale Conosco" da seção de cima */
-  padding-bottom: 80px;  /* 🔹 garante que o rodapé não "empurre" os cards pra fora */
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
 
 #contato .two-col {
-  align-items: flex-start;   /* 🔹 evita que o card da esquerda se estique pra fora */
+  align-items: flex-start;
   gap: 28px;
 }
 
-/* Mantém proporção visual dos cards dentro do container */
 #contato .col {
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
